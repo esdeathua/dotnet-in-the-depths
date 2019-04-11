@@ -6,8 +6,8 @@ namespace ExceptionWorkflow
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            var exceptionHandler = new ExceptionHandler();
+            exceptionHandler.ShowExceptionInfo();
         }
     }
 }
