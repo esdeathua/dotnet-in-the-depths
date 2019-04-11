@@ -8,6 +8,7 @@ namespace ExceptionWorkflow
         {
             var exceptionHandler = new ExceptionHandler();
             exceptionHandler.ShowExceptionInfo();
+            Console.ReadKey();
         }
     }
 }

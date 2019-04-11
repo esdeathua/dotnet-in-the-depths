@@ -7,7 +7,8 @@ namespace ExceptionWorkflow
 {
     public class ExceptionHandler
     {
-        private ExceptionGenerator _exceptionGenerator;
+        private readonly ExceptionGenerator _exceptionGenerator;
+        private delegate void CallHandlerDelegate();
 
         public ExceptionHandler()
         {
@@ -16,20 +17,20 @@ namespace ExceptionWorkflow
 
         public void ShowExceptionInfo()
         {
-            FirstDepthCall();
-            SecondDepthCall();
+            CallHandler(() => _exceptionGenerator.GenerateException());
+            CallHandler(() => _exceptionGenerator.GenerateExceptionOneDepth());
+            CallHandler(() => _exceptionGenerator.GenerateExceptionTwoDepth());
+            CallHandler(() => _exceptionGenerator.GenerateExceptionThreeDepth());
+            CallHandler(() => _exceptionGenerator.GenerateExceptionFourDepth());
         }
 
-        private void FirstDepthCall()
+        private void CallHandler(CallHandlerDelegate action)
         {
-
-        }
-
-        private void SecondDepthCall()
-        {
+            Console.WriteLine("-----------------------------------------");
             try
             {
-                
+                MW.TryHandlerMessage(action.Method.Name);
+                action.Invoke();
             }
             catch (Exception exception)
             {
@@ -37,7 +38,7 @@ namespace ExceptionWorkflow
             }
             finally
             {
-                MW.FinallyHandlerMessage("//some code");
+                MW.FinallyHandlerMessage("//some finally code");
             }
         }
 
