@@ -8,28 +8,47 @@ namespace ExceptionWorkflow
     {
         public void GenerateException()
         {
-            throw new ArgumentException("Hello world!");
+            try
+            {
+                // some code
+                GenerateExceptionOneDepth();
+            }
+            catch (Exception e)
+            {
+                // some code
+                e.Data.Add("GenerateException", "GenerateException method call");
+                throw;
+            }
         }
 
-        public void GenerateExceptionOneDepth()
+        private void GenerateExceptionOneDepth()
         {
-
+            try
+            {
+                // some code
+                GenerateExceptionMethod();
+            }
+            catch (Exception e)
+            {
+                // some code
+                e.Data.Add("GenerateExceptionOneDepth", "GenerateExceptionOneDepth method call");
+                throw;
+            }
         }
 
-        public void GenerateExceptionTwoDepth()
+        private void GenerateExceptionMethod()
         {
-
+            try
+            {
+                // some code
+                throw new NullReferenceException("Oh! reference is null!");
+            }
+            catch (Exception e)
+            {
+                // some code
+                e.Data.Add("GenerateExceptionMethod", "call method what exception will generate");
+                throw;
+            }
         }
-
-        public void GenerateExceptionThreeDepth()
-        {
-
-        }
-
-        public void GenerateExceptionFourDepth()
-        {
-
-        }
-
     }
 }

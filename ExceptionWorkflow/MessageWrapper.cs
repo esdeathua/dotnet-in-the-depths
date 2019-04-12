@@ -6,12 +6,22 @@ namespace ExceptionWorkflow
 {
     public static class MessageWrapper
     {
-        public static void CatchHandlerMessage(string Msg)
+        public static void CatchHandlerMessage(Exception exception)
         {
-            Console.WriteLine("- - - Catch Handler - - -");
-            Console.WriteLine("MESSAGE: {0}", Msg);
-            Console.WriteLine("- - - - - - - - - - - - -");
-            Console.WriteLine();
+            Console.WriteLine("- - - Catch Handler - - -\n");
+
+            if (exception.ToString() is string s && !string.IsNullOrEmpty(s))
+            {
+                string typeException = s.Substring(0, s.IndexOf(':'));
+                Console.WriteLine("Exception type: {0}\n", typeException);
+            }
+            Console.WriteLine("Message: {0}\n", exception.Message);
+
+            Console.WriteLine("Exception string: {0}\n", exception);
+
+            foreach (var item in exception.Data.Values)
+                Console.WriteLine("Exception Data info: {0}", item);
+            Console.WriteLine("- - - - - - - - - - - - -\n");
         }
 
         public static void FinallyHandlerMessage(string Msg)
