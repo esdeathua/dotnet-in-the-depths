@@ -6,6 +6,8 @@ namespace ExceptionWorkflow
 {
     public class ExceptionGenerator
     {
+        private readonly Random _random = new Random();
+
         public void GenerateException()
         {
             try
@@ -17,7 +19,14 @@ namespace ExceptionWorkflow
             {
                 // some code
                 e.Data.Add("GenerateException", "GenerateException method call");
-                throw;
+
+                if (_random.NextDouble() > 0.5d)
+                    throw;
+                else
+                {
+                    e.Data.Add("ThrowE", "is throw e");
+                    throw e;
+                }
             }
         }
 

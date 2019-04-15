@@ -7,8 +7,14 @@ namespace ExceptionWorkflow
         static void Main(string[] args)
         {
             var exceptionHandler = new ExceptionHandler();
-            exceptionHandler.ShowExceptionInfo();
-            Console.ReadKey();
+            int counter = 1;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Iteration: {0}\n", counter++);
+                exceptionHandler.ShowExceptionInfo();
+
+            } while (Console.ReadKey().KeyChar == (char) 13);
         }
     }
 }
