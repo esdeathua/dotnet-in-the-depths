@@ -50,7 +50,7 @@ namespace ExceptionWorkflow
             try
             {
                 // some code
-                throw new NullReferenceException("Oh! reference is null!");
+                ExceptionMethod();
             }
             catch (Exception e)
             {
@@ -58,6 +58,20 @@ namespace ExceptionWorkflow
                 e.Data.Add("GenerateExceptionMethod", "call method what exception will generate");
                 throw;
             }
+        }
+
+        private void ExceptionMethod()
+        {
+            int i = 3;
+            for (int j = 0; j < 10; j++)
+                i++;
+            i -= 8;
+            var rnd = new Random();
+            var doubleValue = rnd.NextDouble();
+            if (doubleValue <= 0.5d)
+                throw new ArgumentException($"ArgumentException: i = {i}, value = {doubleValue}");
+            i *= 8;
+            throw new ArgumentOutOfRangeException($"ArgumentOutOfRangeException: result = {doubleValue * i}");
         }
     }
 }
