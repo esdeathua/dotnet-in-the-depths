@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnglishGrammarWebApp", "Eng
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishGrammarWinForms", "EnglishGrammarWinForms\EnglishGrammarWinForms.csproj", "{E3BB3067-3AFC-4B49-9C48-2E7D5713529C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonConsoleApp", "CommonConsoleApp\CommonConsoleApp.csproj", "{6BD736DA-B429-4106-9E0B-53A22C1D5F3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonConsoleApp", "CommonConsoleApp\CommonConsoleApp.csproj", "{6BD736DA-B429-4106-9E0B-53A22C1D5F3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +36,7 @@ Global
 		{DFBF7137-6FF5-4C2B-8071-3BF344078643}.Release|x86.ActiveCfg = Release|Any CPU
 		{DFBF7137-6FF5-4C2B-8071-3BF344078643}.Release|x86.Build.0 = Release|Any CPU
 		{E3BB3067-3AFC-4B49-9C48-2E7D5713529C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E3BB3067-3AFC-4B49-9C48-2E7D5713529C}.Debug|Any CPU.Build.0 = Debug|x86
 		{E3BB3067-3AFC-4B49-9C48-2E7D5713529C}.Debug|x86.ActiveCfg = Debug|x86
 		{E3BB3067-3AFC-4B49-9C48-2E7D5713529C}.Debug|x86.Build.0 = Debug|x86
 		{E3BB3067-3AFC-4B49-9C48-2E7D5713529C}.Release|Any CPU.ActiveCfg = Release|x86

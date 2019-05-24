@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace EnglishGrammarWinForms
 {
-    public partial class RadForm1 : Telerik.WinControls.UI.RadForm
+    public partial class MainForm : Telerik.WinControls.UI.RadForm
     {
-        public RadForm1()
+        public MainForm()
         {
             InitializeComponent();
         }
